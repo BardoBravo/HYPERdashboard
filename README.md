@@ -1,5 +1,4 @@
 # HYPERdashboard
-Hyperledger integration with dashboard
 
 This project aims to demonstrate how to connect the [Hyperledger Explorer](https://www.hyperledger.org/projects/explorer) to a [Hyperledger Fabric](https://www.hyperledger.org/projects/fabric) blockchain.
 
