@@ -375,7 +375,7 @@ class FabricClient {
       // creating admin peers
       if (discover_results && discover_results.peers_by_org) {
         logger.debug('Peers by Org [%s:]',
-        discover_results.peers_by_org         
+        JSON.stringify(discover_results.peers_by_org)
         );
         for (let org_name in discover_results.peers_by_org) {
           logger.debug('Og Name [%s:]',
