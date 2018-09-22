@@ -382,7 +382,7 @@ class FabricClient {
           org_name         
         );
           let org = discover_results.peers_by_org[org_name];
-          logger.debug('Org Name [%s:]', org );
+          logger.debug('Org Name [%s:]', JSON.stringify(org) );
           logger.debug('Org Name Peers [%s:]', JSON.stringify(org.peers) );
           for (var peer of org.peers) {
             let host = peer.endpoint.split(':')[0];
