@@ -374,8 +374,17 @@ class FabricClient {
       }
       // creating admin peers
       if (discover_results && discover_results.peers_by_org) {
+        logger.debug('Peers by Org [%s:]',
+        discover_results.peers_by_org         
+        );
         for (let org_name in discover_results.peers_by_org) {
+          logger.debug('Og Name [%s:]',
+          org_name         
+        );
           let org = discover_results.peers_by_org[org_name];
+          logger.debug('Org Name [%s:]',
+          org         
+        );
           for (var peer of org.peers) {
             let host = peer.endpoint.split(':')[0];
             if (
