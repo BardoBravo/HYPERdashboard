@@ -37,25 +37,25 @@
           "fullpath": false,
           "adminPrivateKey": {
             "path":              
-              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
+              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore"
           },
           "signedCert": {
             "path":
-              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts"
+              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts"
           }
         },
         "Org2MSP": {
           "mspid": "Org2MSP",
           "adminPrivateKey": {
             "path":
-              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
+              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
           }
         },
         "OrdererMSP": {
           "mspid": "OrdererMSP",
           "adminPrivateKey": {
             "path":
-              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore"
+              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore"
           }
         }
       },
@@ -63,7 +63,7 @@
         "peer0.org1.example.com": {
           "tlsCACerts": {
             "path":
-              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+              "/home/bravobardo/fabric-samples/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
           },
           "url": "grpcs://localhost:7051",
           "eventUrl": "grpcs://localhost:7053",
