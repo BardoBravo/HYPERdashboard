@@ -387,6 +387,10 @@ class FabricClient {
         );
           for (var peer of org.peers) {
             let host = peer.endpoint.split(':')[0];
+            logger.debug('Host [%s:]', host );
+            logger.debug('Peers [%s:]', this.client_config.peers );
+            logger.debug('Host Peers [%s:]', this.client_config.peers[host] );
+            logger.debug('Host Peers URL [%s:]', this.client_config.peers[host].url );
             if (
               this.client_config.peers &&
               this.client_config.peers[host] &&
