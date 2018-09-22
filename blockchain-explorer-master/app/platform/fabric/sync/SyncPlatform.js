@@ -95,6 +95,9 @@ class SyncPlatform {
     };
 
     let peerStatus = await this.client.getPeerStatus(peer);
+    console.log(
+      '\n' + peerStatus
+    );    
 
     if (peerStatus.status) {
       // updating the client network and other details to DB
