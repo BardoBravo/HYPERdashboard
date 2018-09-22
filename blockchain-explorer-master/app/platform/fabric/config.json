@@ -6,7 +6,7 @@
         "client-1": {
           "tlsEnable": true,
           "organization": "Org1MSP",
-          "channel": "mychannel",
+          "channel": "mychannel1",
           "credentialStore": {
             "path": "./tmp/credentialStore_Org1/credential",
             "cryptoStore": {
