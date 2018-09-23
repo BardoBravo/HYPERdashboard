@@ -407,7 +407,8 @@ class FabricClient {
               logger.debug(
                 'Successfully created peer [%s:%s] for client [%s]',
                 host,
-                peer.port,
+                //peer.port,
+                'Something',
                 this.client_name
               );
             } else {
