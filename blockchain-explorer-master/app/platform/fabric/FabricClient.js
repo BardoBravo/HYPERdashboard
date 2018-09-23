@@ -384,8 +384,9 @@ class FabricClient {
           let org = discover_results.peers_by_org[org_name];
           logger.debug('Org Name [%s:]', JSON.stringify(org) );
           logger.debug('Org Name Peers [%s:]', JSON.stringify(org.peers) );
-          for (var peer of org.peers) {
-            let host = peer.endpoint.split(':')[0];
+          //for (var peer of org.peers) {
+            //let host = peer.endpoint.split(':')[0];
+            let host = 'peer0.org1.example.com';
             logger.debug('Host [%s:]', host );
             logger.debug('Peers [%s:]', this.client_config.peers );
             logger.debug('Host Peers [%s:]', this.client_config.peers[host] );
@@ -398,7 +399,8 @@ class FabricClient {
               let adminpeer = this.newAdminPeer(
                 channel,
                 this.client_config.peers[host].url,
-                peer.mspid,
+                //peer.mspid,
+                'Org1MSP',
                 host,
                 discover_results.msps
               );
@@ -416,7 +418,7 @@ class FabricClient {
               );
               return;
             }
-          }
+          //}
         }
       }
       channel._discovery_results = discover_results;
