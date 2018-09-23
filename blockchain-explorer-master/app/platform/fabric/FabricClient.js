@@ -408,7 +408,7 @@ class FabricClient {
                 'Successfully created peer [%s:%s] for client [%s]',
                 host,
                 //peer.port,
-                'Something',
+                '7051',
                 this.client_name
               );
             } else {
