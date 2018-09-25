@@ -421,7 +421,7 @@ class FabricClient {
               );
               return;
             }
-          //}
+          }
         }
       }
       channel._discovery_results = discover_results;
