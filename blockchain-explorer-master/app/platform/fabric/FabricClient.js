@@ -381,12 +381,14 @@ class FabricClient {
           logger.debug('Og Name [%s:]',
           org_name         
         );
+          //bravobardo - special code simulating missing peers
+          discover_results.peers_by_org[org_name].peers.add({"mspid":"Org1MSP","port":"7051","endpoints":[{"host":"peer0.org1.example.com", "port":7051}]});
           let org = discover_results.peers_by_org[org_name];
           logger.debug('Org Name [%s:]', JSON.stringify(org) );
           logger.debug('Org Name Peers [%s:]', JSON.stringify(org.peers) );
-          //for (var peer of org.peers) {
-            //let host = peer.endpoint.split(':')[0];
-            let host = 'peer0.org1.example.com';
+          for (var peer of org.peers) {
+            let host = peer.endpoint.split(':')[0];
+            //let host = 'peer0.org1.example.com';
             logger.debug('Host [%s:]', host );
             logger.debug('Peers [%s:]', this.client_config.peers );
             logger.debug('Host Peers [%s:]', this.client_config.peers[host] );
@@ -399,16 +401,16 @@ class FabricClient {
               let adminpeer = this.newAdminPeer(
                 channel,
                 this.client_config.peers[host].url,
-                //peer.mspid,
-                'Org1MSP',
+                peer.mspid,
+                //'Org1MSP',
                 host,
                 discover_results.msps
               );
               logger.debug(
                 'Successfully created peer [%s:%s] for client [%s]',
                 host,
-                //peer.port,
-                '7051',
+                peer.port,
+                //'7051',
                 this.client_name
               );
             } else {
