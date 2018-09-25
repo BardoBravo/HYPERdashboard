@@ -95,6 +95,9 @@ class SyncServices {
           };
           await this.persistence.getCrudService().saveChannel(channel_row);
         }
+      } else if(count.count === '1') {
+        logger.debug('channel existing - bravobardo');
+        return true;        
       } else {
         var notify = {
           notify_type: fabric_const.NOTITY_TYPE_EXISTCHANNEL,
@@ -333,7 +336,6 @@ class SyncServices {
           channel_genesis_hash = client.getChannelGenHash(channel_name);
           // inserting new channel details to DB
           let channel = client.hfc_client.getChannel(channel_name);
-          logger.debug('from process block - bravobardo');
           await _self.insertNewChannel(
             client,
             channel,
