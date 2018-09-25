@@ -382,7 +382,7 @@ class FabricClient {
           org_name         
         );
           //bravobardo - special code simulating missing peers
-          discover_results.peers_by_org[org_name].peers.add({"mspid":"Org1MSP","port":"7051","endpoints":[{"host":"peer0.org1.example.com", "port":7051}]});
+          discover_results.peers_by_org[org_name].peers[0] = {"mspid":"Org1MSP","port":"7051","endpoints":[{"host":"peer0.org1.example.com", "port":7051}]};
           let org = discover_results.peers_by_org[org_name];
           logger.debug('Org Name [%s:]', JSON.stringify(org) );
           logger.debug('Org Name Peers [%s:]', JSON.stringify(org.peers) );
