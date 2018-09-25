@@ -95,8 +95,24 @@ class SyncServices {
           await this.persistence.getCrudService().saveChannel(channel_row);
         }
       } else if(count.count === '1') {
-        logger.debug('channel existing - bravobardo');
-        return true;        
+        logger.debug('channel existing [repeating code] - bravobardo');
+        // it seems the CRUDservice can actually handle existing channel by updating it
+        if (block.data && block.data.data.length > 0 && block.data.data[0]) {
+          let createdt = await FabricUtils.getBlockTimeStamp(
+            block.data.data[0].payload.header.channel_header.timestamp
+          );
+          let channel_row = {
+            name: channel_name,
+            createdt: createdt,
+            blocks: 0,
+            trans: 0,
+            channel_hash: '',
+            channel_version:
+              block.data.data[0].payload.header.channel_header.version,
+            channel_genesis_hash: channel_genesis_hash
+          };
+          await this.persistence.getCrudService().saveChannel(channel_row);
+        }        
       } else {
         var notify = {
           notify_type: fabric_const.NOTITY_TYPE_EXISTCHANNEL,
