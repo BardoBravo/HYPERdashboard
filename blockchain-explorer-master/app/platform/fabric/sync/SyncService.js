@@ -47,7 +47,6 @@ class SyncServices {
       let channel_genesis_hash = await FabricUtils.generateBlockHash(
         block.header
       );
-      logger.debug('from sync - bravobardo');
       let res = await this.insertNewChannel(
         client,
         channel,
