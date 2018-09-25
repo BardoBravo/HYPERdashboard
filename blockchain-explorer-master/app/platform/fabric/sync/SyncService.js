@@ -47,6 +47,7 @@ class SyncServices {
       let channel_genesis_hash = await FabricUtils.generateBlockHash(
         block.header
       );
+      logger.debug('from sync - bravobardo');
       let res = await this.insertNewChannel(
         client,
         channel,
@@ -332,6 +333,7 @@ class SyncServices {
           channel_genesis_hash = client.getChannelGenHash(channel_name);
           // inserting new channel details to DB
           let channel = client.hfc_client.getChannel(channel_name);
+          logger.debug('from process block - bravobardo');
           await _self.insertNewChannel(
             client,
             channel,
