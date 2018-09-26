@@ -60,6 +60,10 @@
           "adminPrivateKey": {
             "path":
               "/home/bravobardo/HYPERSamples/fabric-samples-release-1.2/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore"
+          },
+          "signedCert": {
+            "path":
+              "/home/bravobardo/HYPERSamples/fabric-samples-release-1.2/balance-transfer/artifacts/channel/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts"
           }
         },
         "OrdererMSP": {
