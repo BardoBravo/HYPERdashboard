@@ -44,7 +44,7 @@ class FabricEvent {
         }
       },
       err => {
-        logger.error('bravobardo - Block Event %s', JSON.stringify(err), JSON.stringify(block));
+        logger.error('bravobardo - Block Event %s', JSON.stringify(err));
       }
     );
     this.connectPeerEventHub();
