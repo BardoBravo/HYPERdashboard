@@ -39,11 +39,12 @@ class FabricEvent {
       async block => {
         // process only first block for creating new channel in client
         if (block.header.number === '0' || block.header.number == 0) {
+          logger.error('bravobardo - Block Event %s', JSON.stringify(block));
           await this.fabricServices.processBlockEvent(this.client, block);
         }
       },
       err => {
-        logger.error('Block Event %s %s', JSON.stringify(err), JSON.stringify(block));
+        logger.error('bravobardo - Block Event %s', JSON.stringify(err), JSON.stringify(block));
       }
     );
     this.connectPeerEventHub();
@@ -79,11 +80,12 @@ class FabricEvent {
       async block => {
         // skip first block, it is process by peer event hub
         if (!(block.header.number === '0' || block.header.number == 0)) {
+          logger.error('bravobardo - Block Event %s', JSON.stringify(block));
           await this.fabricServices.processBlockEvent(this.client, block);
         }
       },
       err => {
-        logger.error('Block Event %s %s', JSON.stringify(err), JSON.stringify(block));
+        logger.error('Block Event %s', JSON.stringify(err));
       }
     );
     this.connectChannelEventHub(channel.getName(), eventHub);
