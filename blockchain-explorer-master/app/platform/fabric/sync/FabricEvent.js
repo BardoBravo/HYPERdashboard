@@ -80,7 +80,7 @@ class FabricEvent {
       async block => {
         // skip first block, it is process by peer event hub
         if (!(block.header.number === '0' || block.header.number == 0)) {
-          logger.error('bravobardo - Block Event %s', JSON.stringify(block));
+          logger.info('bravobardo - Block Event %s', JSON.stringify(block));
           await this.fabricServices.processBlockEvent(this.client, block);
         }
       },
@@ -163,7 +163,9 @@ class FabricEvent {
         await this.fabricServices.synchNetworkConfigToDB(this.client);
       }
     }
-    for (let channel of channels.channels) {
+    // bravobardo - for (let channel of channels.channels) {
+    let channel = channels.channel[0];
+    logger.info('bravobardo - Channel sync %s', channel.channel_id);
       let channel_name = channel.channel_id;
       // check channel event is connected
       if (this.isChannelEventHubConnected(channel_name)) {
@@ -187,7 +189,7 @@ class FabricEvent {
           }
         }
       }
-    }
+    //}
   }
 }
 
