@@ -284,7 +284,9 @@ class SyncServices {
   async synchBlocks(client, channel) {
     let client_name = client.getClientName();
     let channel_name = channel.getName();
-    
+    logger.info(
+      'bravobardo - only for client-1 >> ' + client_name + '_' + channel_name
+    );
     if (client.getClientName() == 'client-1') {
       logger.info(
         'bravobardo - only for client-1 >> ' + client_name + '_' + channel_name
