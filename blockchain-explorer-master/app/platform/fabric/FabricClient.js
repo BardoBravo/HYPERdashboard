@@ -61,6 +61,7 @@ class FabricClient {
         this.defaultPeer.getName(),
         true
       );
+      logger.debug('bravobardo - channel data [%s]', JSON.stringify(channels.channels));
     } catch (e) {
       logger.error(e);
     }
