@@ -287,11 +287,6 @@ class SyncServices {
     logger.info(
       'bravobardo - only for client-1 >> ' + client_name + '_' + channel_name
     );
-    if (client.getClientName() == 'client-1') {
-      logger.info(
-        'bravobardo - only for client-1 >> ' + client_name + '_' + channel_name
-      );    
-
     let synch_key = client_name + '_' + channel_name;
     if (this.synchInProcess.includes(synch_key)) {
       logger.info(
@@ -331,7 +326,6 @@ class SyncServices {
     }
     var index = this.synchInProcess.indexOf(synch_key);
     this.synchInProcess.splice(index, 1);
-  }
   }
 
   async processBlockEvent(client, block) {

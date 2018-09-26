@@ -163,8 +163,8 @@ class FabricEvent {
         await this.fabricServices.synchNetworkConfigToDB(this.client);
       }
     }
-    // bravobardo - for (let channel of channels.channels) {
-    let channel = channels.channels[0];
+    for (let channel of channels.channels) {
+    // bravobardo - let channel = channels.channels[0];
     logger.info('bravobardo - Channel sync %s', channel.channel_id);
       let channel_name = channel.channel_id;
       // check channel event is connected
@@ -189,7 +189,7 @@ class FabricEvent {
           }
         }
       }
-    //}
+    }
   }
 }
 
