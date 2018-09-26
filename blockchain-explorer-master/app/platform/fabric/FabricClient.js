@@ -79,6 +79,7 @@ class FabricClient {
       try {
         // load default channel network details from discovery
         let result = await this.defaultChannel.getDiscoveryResults();
+        logger.debug('bravobardo - default channel data', JSON.stringify(result));
       } catch (e) {
         logger.debug('Channel Discovery >>  %s', e);
         throw new ExplorerError(
