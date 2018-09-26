@@ -77,7 +77,7 @@ class SyncServices {
       let count = await this.persistence
         .getCrudService()
         .existChannel(channel_name);
-        logger.debug('channel existing [repeating code] counter %s - bravobardo', count.count);
+        logger.debug('channel existing [repeating code] counters %s - bravobardo', count.count);
         if (count.count === '0') {
         if (block.data && block.data.data.length > 0 && block.data.data[0]) {
           let createdt = await FabricUtils.getBlockTimeStamp(
