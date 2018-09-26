@@ -251,7 +251,7 @@ class FabricClient {
     // Loading default Peer and channel
     let channel_name = client_config.client.channel;
     let peer_name = Object.keys(client_config.channels[channel_name].peers)[0];
-    logger.debug('bravobardo channel Name >> %s', JSON.stringify(channel_name) );
+    logger.debug('bravobardo channel Name >> %s', JSON.stringify(channel_name) );    
     logger.debug('bravobardo Peer Name >> %s', JSON.stringify(peer_name) );
     this.defaultChannel = this.hfc_client.getChannel(channel_name);
     logger.debug(
@@ -261,7 +261,12 @@ class FabricClient {
     );
 
     if (this.defaultChannel.getPeers().length > 0) {
+      if (this.client_name == 'client-2') {
+        this.defaultPeer = this.defaultChannel.getPeer('peer0.org2.example.com');
+        logger.debug('bravobardo inside getPeers channel Name >> %s', JSON.stringify(channel_name) );  
+      } else {
       this.defaultPeer = this.defaultChannel.getPeer(peer_name);
+      }
     } else {
       throw new ExplorerError(explorer_mess.error.ERROR_2006, this.client_name);
     }
