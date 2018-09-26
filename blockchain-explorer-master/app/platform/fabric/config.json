@@ -13,24 +13,13 @@
               "path": "./tmp/credentialStore_Org1/crypto"
             }
           }
-        },
-        "client-2": {
-          "tlsEnable": true,
-          "organization": "Org2MSP",
-          "channel": "mychannel",
-          "credentialStore": {
-            "path": "./tmp/credentialStore_Org2/credential",
-            "cryptoStore": {
-              "path": "./tmp/credentialStore_Org2/crypto"
-            }
-          }
         }
       },
       "channels": {
         "mychannel": {
           "peers": {
-            "peer0.org1.example.com": {},
-            "peer0.org2.example.com": {}
+            "peer0.org1.example.com": {}
+            
           },
           "connection": {
             "timeout": {
