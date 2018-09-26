@@ -251,6 +251,7 @@ class FabricClient {
     // Loading default Peer and channel
     let channel_name = client_config.client.channel;
     let peer_name = Object.keys(client_config.channels[channel_name].peers)[0];
+    logger.debug('bravobardo channel Name >> %s', JSON.stringify(channel_name) );
     logger.debug('bravobardo Peer Name >> %s', JSON.stringify(peer_name) );
     this.defaultChannel = this.hfc_client.getChannel(channel_name);
     logger.debug(
