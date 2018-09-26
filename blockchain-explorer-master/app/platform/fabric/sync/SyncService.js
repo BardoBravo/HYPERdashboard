@@ -77,7 +77,8 @@ class SyncServices {
       let count = await this.persistence
         .getCrudService()
         .existChannel(channel_name);
-      if (count.count === '0') {
+        logger.debug('channel existing [repeating code] counter %s - bravobardo', count.count);
+        if (count.count === '0') {
         if (block.data && block.data.data.length > 0 && block.data.data[0]) {
           let createdt = await FabricUtils.getBlockTimeStamp(
             block.data.data[0].payload.header.channel_header.timestamp
@@ -94,8 +95,7 @@ class SyncServices {
           };
           await this.persistence.getCrudService().saveChannel(channel_row);
         }
-      } else if(count.count === '1') {
-        logger.debug('channel existing [repeating code] counter %s - bravobardo', count.count);
+      } else if(count.count === '1') {        
         // it seems the CRUDservice can actually handle existing channel by updating it
         if (block.data && block.data.data.length > 0 && block.data.data[0]) {
           let createdt = await FabricUtils.getBlockTimeStamp(
