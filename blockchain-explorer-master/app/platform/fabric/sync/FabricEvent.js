@@ -43,7 +43,7 @@ class FabricEvent {
         }
       },
       err => {
-        logger.error('Block Event %s', err);
+        logger.error('Block Event %s %s', JSON.stringify(err), JSON.stringify(block));
       }
     );
     this.connectPeerEventHub();
@@ -83,7 +83,7 @@ class FabricEvent {
         }
       },
       err => {
-        logger.error('Block Event %s', err);
+        logger.error('Block Event %s %s', JSON.stringify(err), JSON.stringify(block));
       }
     );
     this.connectChannelEventHub(channel.getName(), eventHub);
