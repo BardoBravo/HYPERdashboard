@@ -164,7 +164,7 @@ class FabricEvent {
       }
     }
     // bravobardo - for (let channel of channels.channels) {
-    let channel = channels.channel[0];
+    let channel = channels.channels[0];
     logger.info('bravobardo - Channel sync %s', channel.channel_id);
       let channel_name = channel.channel_id;
       // check channel event is connected
